@@ -1,6 +1,7 @@
 const _initTime = Date.now();
 let main = document.querySelector("main");
 let sectionList = main.children[2]
+let sectionDisplay = main.children[0]
 
 const getElapsedTime = () => {
   return Number((Date.now() - _initTime) / 1000).toFixed(2) + 's';
@@ -24,3 +25,13 @@ for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare);
 };
 
+sectionDisplay.addEventListener('click', (event) => {
+  if (event.target.classList.contains("displaydsquare")){
+    displayColor(even.target);
+  }
+});
+
+function displayColor(square){
+  let color = square.classList[1]
+  alert(color);
+}
